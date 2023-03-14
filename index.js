@@ -87,22 +87,7 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
-
-// The total number of months included in the dataset.
-
-// The net total amount of Profit/Losses over the entire period.
-
-// The average of the changes in Profit/Losses over the entire period.
-
-// You will need to track what the total change in profits is from month to month and then find the average.
-
-// (Total/(Number of months - 1))
-
-// The greatest increase in profits (date and amount) over the entire period.
-
-// The greatest decrease in losses (date and amount) over the entire period.
-
+//Main variables
 var totalMonths = 0
 var totalNetProfit = 0
 var averageChange = 0
@@ -110,98 +95,47 @@ var greatestIncreasePL = 0
 var greatestDecreasePL = 0
 
 //Checks how many items in the array are there assuming there are no gaps in months of the array
+//test to see if console sees the output
 // console.log(finances.length);
+//used to find out how many months there are
 var totalMonths = finances.length 
-
 var total = 0
 
-//Total Net Profit
+
+////
+////Total Net Profit
+///
 for (let i = 0; i < finances.length ; i++ ) {
 
 total = total + finances[i][1]; 
+//simplified version below
 // total += finances[i][1];
 
 }
+//running a test for total
 // console.log(total)
 totalNetProfit = total
-// average = total / finacnces.length
-
-// for (let i = 0; i < finances.length ; i++ ) {
-// console.log(finances[i][1]);
-// var sum = 0
-
-// var z = finances[i][0] + finances[i][1]
-// }
-// console.log(z)
-// var x = finances[0][1] + finances[1][1] 
-// console.log(x)
-
-// if (typeof finances[i][1] == 'object'){
-// sum += arrSum(finances[i][1]);
-// } else {
-// sum += finances[i][1];
-// }
-// }
-// console.log(sum)
 
 
 
-// for (let i = 0; i < colors.finances; i = i + 1) {
-//   console.log(finances[i]);
-// }
-
-// var sum = 0;
-// for (let i = 0; i < finances.length; i++) {
-//   sum += finances[i];
-// }
-// console.log(sum)
-
-// var finances = array
-
-// let result = array.reduce((x,y) => {
-//   return x + y ;
-// }, 867884 );
-// console.log(result)
-
-// const filtered = finances.filter((_, i) => i % 2 === 0)
-
-// console.log(filtered)
-
-// var filtered2 = [1, 2, 3, 4].filter(
-//   function(e) {
-//     return this.indexOf(e) < 0;
-//   },
-//   [2, 4]
-// );
-// console.log(filtered2);
-
-// const numbers = [175, 50, 25];
-
-// var output = finances.reduce(myFunc);
-
-
-// function myFunc(total, num) {
-//   return total + num;
-// }
-
-
-// var myFunc = output 
-// console.log(output);
-
+////
 // Average Change
+///
+
 
 average = total / finances.length - 1
 // console.log(average) 
-
-
-// Math.round(100*average)/100; 
+//testing
+ 
 averageChange = average
-// avergae = Math.ceil(averageChange/100)*100 
-// Greatest Increase in Profit/Loss 
 
-// for(var i = 0;i < finances.length; i++){
-// finances[i].filter
-// }
+
+
+///
+// Greatest Increase in Profit/Loss 
+///
+
+//variables for largest and smallest values and months
 var largest = 0
 var largestMonth = ""
 var smallestMonth = ""
@@ -213,7 +147,13 @@ if(largest < finances[i][1]){
  var largestMonth = finances[i][0];
 }
 }
+//test
 // console.log(largestMonth)
+
+
+///
+// Greatest Decrease in Profit/Loss
+///
 
 for(var j = 0; j < finances.length ; j ++){
   if(smallest > finances[j][1]){
@@ -221,15 +161,23 @@ for(var j = 0; j < finances.length ; j ++){
     var smallestMonth = finances[j][0];
     }
     }
-// console.log(smallestMonth)
 
+//extra tests ran
+// console.log(smallestMonth)
 // console.log(largest)
 // console.log(smallest)
-// Greatest Decrease in Profit/Loss
-///
+
+
+
+
+//variables to match the new values form loops
 var greatestIncreasePL = largest 
 var greatestDecreasePL = smallest
 
+
+//
+//How everything is inputed into the console to display it using conctenation
+//
 console.log("Financial Analysis");
 console.log("-------------------------");
 
