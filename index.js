@@ -192,9 +192,11 @@ totalNetProfit = total
 
 average = total / finances.length - 1
 // console.log(average) 
+
+
+// Math.round(100*average)/100; 
 averageChange = average
-
-
+// avergae = Math.ceil(averageChange/100)*100 
 // Greatest Increase in Profit/Loss 
 
 // for(var i = 0;i < finances.length; i++){
