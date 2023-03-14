@@ -113,22 +113,42 @@ var greatestDecreasePL = 0
 console.log(finances.length);
 var totalMonths = finances.length 
 
+var total = 0
 
 //Total Net Profit
-
 for (let i = 0; i < finances.length ; i++ ) {
-console.log(finances[i][1]);
-var sum = 0
 
-// sum += parseInt(sum[i]);
+total = total + finances[i][1]; 
+// total += finances[i][1];
+
+}
+console.log(total)
+totalNetProfit = total
+// average = total / finacnces.length
+
+// for (let i = 0; i < finances.length ; i++ ) {
+// console.log(finances[i][1]);
+// var sum = 0
+
+// var z = finances[i][0] + finances[i][1]
+// }
+// console.log(z)
+// var x = finances[0][1] + finances[1][1] 
+// console.log(x)
+
+// if (typeof finances[i][1] == 'object'){
+// sum += arrSum(finances[i][1]);
+// } else {
+// sum += finances[i][1];
+// }
+// }
 // console.log(sum)
 
-}
 
 
-for (let i = 0; i < colors.finances; i = i + 1) {
-  console.log(finances[i]);
-}
+// for (let i = 0; i < colors.finances; i = i + 1) {
+//   console.log(finances[i]);
+// }
 
 // var sum = 0;
 // for (let i = 0; i < finances.length; i++) {
@@ -143,36 +163,71 @@ for (let i = 0; i < colors.finances; i = i + 1) {
 // }, 867884 );
 // console.log(result)
 
-const filtered = finances.filter((_, i) => i % 2 === 0)
+// const filtered = finances.filter((_, i) => i % 2 === 0)
 
-console.log(filtered)
+// console.log(filtered)
 
-var filtered2 = [1, 2, 3, 4].filter(
-  function(e) {
-    return this.indexOf(e) < 0;
-  },
-  [2, 4]
-);
-console.log(filtered2);
+// var filtered2 = [1, 2, 3, 4].filter(
+//   function(e) {
+//     return this.indexOf(e) < 0;
+//   },
+//   [2, 4]
+// );
+// console.log(filtered2);
 
-const numbers = [175, 50, 25];
+// const numbers = [175, 50, 25];
 
-var output = finances.reduce(myFunc);
+// var output = finances.reduce(myFunc);
 
 
-function myFunc(total, num) {
-  return total + num;
-}
+// function myFunc(total, num) {
+//   return total + num;
+// }
+
 
 // var myFunc = output 
-console.log(output);
+// console.log(output);
+
+// Average Change
+
+average = total / finances.length - 1
+console.log(average) 
+averageChange = average
+
+
+// Greatest Increase in Profit/Loss 
+
+// for(var i = 0;i < finances.length; i++){
+// finances[i].filter
+// }
+var largest = 0
+var smallest = 0
+for(var i = 0; i < finances.length ; i ++){
+if(largest < finances[i][1]){
+ largest = finances[i][1];
+}
+else { 
+  {
+    smallest = finances [i][1];
+    }
+}
+}
+
+console.log(largest)
+console.log(smallest)
+// Greatest Decrease in Profit/Loss
+///
+var greatestIncreasePL = largest 
+var greatestDecreasePL = smallest
 
 console.log("Financial Analysis");
 console.log("-------------------------");
 
 console.log("Total Months: "+ totalMonths);
 
-console.log("Average Change: "+ averageChange);
+console.log("Total Net Profit: £"+ totalNetProfit);
 
-console.log("Greatest Increase in Profits/Losses: "+ greatestIncreasePL);
-console.log("Greatest Decrease in Profits/Losses: "+ greatestDecreasePL);
+console.log("Average Change: £"+ averageChange);
+
+console.log("Greatest Increase in Profits/Losses: £"+ greatestIncreasePL);
+console.log("Greatest Decrease in Profits/Losses: £"+ greatestDecreasePL);
