@@ -110,7 +110,7 @@ var greatestIncreasePL = 0
 var greatestDecreasePL = 0
 
 //Checks how many items in the array are there assuming there are no gaps in months of the array
-console.log(finances.length);
+// console.log(finances.length);
 var totalMonths = finances.length 
 
 var total = 0
@@ -122,7 +122,7 @@ total = total + finances[i][1];
 // total += finances[i][1];
 
 }
-console.log(total)
+// console.log(total)
 totalNetProfit = total
 // average = total / finacnces.length
 
@@ -191,7 +191,7 @@ totalNetProfit = total
 // Average Change
 
 average = total / finances.length - 1
-console.log(average) 
+// console.log(average) 
 averageChange = average
 
 
@@ -201,20 +201,28 @@ averageChange = average
 // finances[i].filter
 // }
 var largest = 0
+var largestMonth = ""
+var smallestMonth = ""
 var smallest = 0
+
 for(var i = 0; i < finances.length ; i ++){
 if(largest < finances[i][1]){
  largest = finances[i][1];
-}
-else { 
-  {
-    smallest = finances [i][1];
-    }
+ var largestMonth = finances[i][0];
 }
 }
+// console.log(largestMonth)
 
-console.log(largest)
-console.log(smallest)
+for(var j = 0; j < finances.length ; j ++){
+  if(smallest > finances[j][1]){
+    smallest = finances [j][1];
+    var smallestMonth = finances[j][0];
+    }
+    }
+// console.log(smallestMonth)
+
+// console.log(largest)
+// console.log(smallest)
 // Greatest Decrease in Profit/Loss
 ///
 var greatestIncreasePL = largest 
@@ -229,5 +237,5 @@ console.log("Total Net Profit: £"+ totalNetProfit);
 
 console.log("Average Change: £"+ averageChange);
 
-console.log("Greatest Increase in Profits/Losses: £"+ greatestIncreasePL);
-console.log("Greatest Decrease in Profits/Losses: £"+ greatestDecreasePL);
+console.log("Greatest Increase in Profits/Losses: "+  largestMonth +" £"+ greatestIncreasePL );
+console.log("Greatest Decrease in Profits/Losses: "+  smallestMonth +" (£"+ greatestDecreasePL +")");
